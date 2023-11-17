@@ -1,9 +1,4 @@
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.naming.NamingException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,7 +8,7 @@ import javax.naming.NamingException;
  *
  * @author Bruna
  */
-public class Main { 
+public class Main {
 
     public static void main(String[] args) {
         try {
