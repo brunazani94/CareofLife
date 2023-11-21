@@ -162,9 +162,9 @@ public class UsuarioGUI extends javax.swing.JFrame {
         // instanciando a classe Usuario do pacote modelo e criando seu objeto usuarios
 Usuario usuarios = new Usuario();
 usuarios.setNome(jTextField1.getText());
-usuarios.setCpf(jTextField2.getText());
+//usuarios.setCpf(jTextField2.getText());
 usuarios.setEmail(jTextField3.getText());
-usuarios.setTelefone(jTextField4.getText());
+//usuarios.setTelefone(jTextField4.getText());
 
 // fazendo a validação dos dados
 if ((jTextField1.getText().isEmpty()) || (jTextField2.getText().isEmpty()) || (jTextField3.getText().isEmpty()) || (jTextField4.getText().isEmpty())) {
