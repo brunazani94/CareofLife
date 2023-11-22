@@ -1,6 +1,6 @@
 package main;
 
-import gui.UsuarioGUI;
+import gui.Home;
 
 /**
  *
@@ -13,7 +13,7 @@ public class Main {
     }
     
     public static void run() {
-        new UsuarioGUI().setVisible(true);
+        new Home().setVisible(true);
     }
     
 }
