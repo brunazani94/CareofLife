@@ -3,9 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui;
+
 import modelo.Usuario;
 import dao.UsuarioDAO;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bruna
@@ -18,7 +20,7 @@ public class UsuarioGUI extends javax.swing.JFrame {
     public UsuarioGUI() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -29,14 +31,14 @@ public class UsuarioGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        botao_cadastrar_usuario = new javax.swing.JButton();
+        botaao_limpar_campos = new javax.swing.JButton();
+        botaao_sair = new javax.swing.JButton();
+        nome_usuario = new javax.swing.JTextField();
+        cpf_usuario = new javax.swing.JTextField();
+        email_usuario = new javax.swing.JTextField();
+        telefone_usuario = new javax.swing.JTextField();
+        senha_usuario = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,34 +58,46 @@ public class UsuarioGUI extends javax.swing.JFrame {
 
         jLabel6.setText("Telefone:");
 
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botao_cadastrar_usuario.setText("Cadastrar");
+        botao_cadastrar_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botao_cadastrar_usuarioActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Limpar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaao_limpar_campos.setText("Limpar");
+        botaao_limpar_campos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botaao_limpar_camposActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Sair");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaao_sair.setText("Sair");
+        botaao_sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botaao_sairActionPerformed(evt);
             }
         });
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nome_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nome_usuarioActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setText("jPasswordField1");
+        cpf_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpf_usuarioActionPerformed(evt);
+            }
+        });
+
+        email_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                email_usuarioActionPerformed(evt);
+            }
+        });
+
+        senha_usuario.setText("jPasswordField1");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Senha");
@@ -100,15 +114,15 @@ public class UsuarioGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(email_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cpf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nome_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(15, 15, 15)
                                         .addComponent(jLabel1))))))
@@ -119,13 +133,13 @@ public class UsuarioGUI extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                            .addComponent(jTextField4)))
+                            .addComponent(senha_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                            .addComponent(telefone_usuario)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addComponent(jButton1)
+                        .addComponent(botao_cadastrar_usuario)
                         .addGap(95, 95, 95)
-                        .addComponent(jButton2)))
+                        .addComponent(botaao_limpar_campos)))
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -134,7 +148,7 @@ public class UsuarioGUI extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(152, 152, 152))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(botaao_sair)
                         .addGap(155, 155, 155))))
         );
         layout.setVerticalGroup(
@@ -147,84 +161,97 @@ public class UsuarioGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nome_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cpf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telefone_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(senha_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(8, 8, 8)
                         .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(botao_cadastrar_usuario)
+                    .addComponent(botaao_limpar_campos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(botaao_sair)
                 .addGap(13, 13, 13))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botao_cadastrar_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_cadastrar_usuarioActionPerformed
         // instanciando a classe Usuario do pacote modelo e criando seu objeto usuarios
-Usuario usuarios = new Usuario();
-usuarios.setNome(jTextField1.getText());
-//usuarios.setCpf(jTextField2.getText());
-usuarios.setEmail(jTextField3.getText());
-//usuarios.setTelefone(jTextField4.getText());
+        Usuario usuarios = new Usuario();
+        usuarios.setNome(nome_usuario.getText());
+        usuarios.setCpf(cpf_usuario.getText());
+        usuarios.setEmail(email_usuario.getText());
+        usuarios.setTelefone(telefone_usuario.getText());
 
 // fazendo a validação dos dados
-if ((jTextField1.getText().isEmpty()) || (jTextField2.getText().isEmpty()) || (jTextField3.getText().isEmpty()) || (jTextField4.getText().isEmpty())) {
-   JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
-}
-else {
+        if ((nome_usuario.getText().isEmpty()) || (cpf_usuario.getText().isEmpty()) || (email_usuario.getText().isEmpty()) || (telefone_usuario.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+        } else {
 
-    // instanciando a classe UsuarioDAO do pacote dao e criando objeto dao
-    UsuarioDAO dao = new UsuarioDAO();
-    dao.adiciona(usuarios);
-    JOptionPane.showMessageDialog(null, "Usuário "+jTextField1.getText()+" inserido com sucesso! ");
-}
+            // instanciando a classe UsuarioDAO do pacote dao e criando objeto dao
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.adiciona(usuarios);
+            JOptionPane.showMessageDialog(null, "Usuário " + nome_usuario.getText() + " inserido com sucesso! ");
+        }
 
 // apaga os dados preenchidos nos campos de texto
-jTextField1.setText("");
-jTextField2.setText("");
-jTextField3.setText("");
-jTextField4.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        nome_usuario.setText("");
+        cpf_usuario.setText("");
+        email_usuario.setText("");
+        telefone_usuario.setText("");
+    }//GEN-LAST:event_botao_cadastrar_usuarioActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    jTextField1.setText("");
-    jTextField2.setText("");
-    jTextField3.setText("");
-    jTextField4.setText("");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botaao_limpar_camposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaao_limpar_camposActionPerformed
+        nome_usuario.setText("");
+        cpf_usuario.setText("");
+        email_usuario.setText("");
+        telefone_usuario.setText("");
+    }//GEN-LAST:event_botaao_limpar_camposActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      System.exit(0); 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void botaao_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaao_sairActionPerformed
+        HomeGUI Home;
+        Home = new HomeGUI();
+        new HomeGUI().setVisible(true);
+    }//GEN-LAST:event_botaao_sairActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-         
-    }//GEN-LAST:event_jTextField1ActionPerformed
-   
+    private void nome_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome_usuarioActionPerformed
+
+
+    }//GEN-LAST:event_nome_usuarioActionPerformed
+
+    private void cpf_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpf_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpf_usuarioActionPerformed
+
+    private void email_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_usuarioActionPerformed
+// TODO add your handling code here:
+
+    }//GEN-LAST:event_email_usuarioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botaao_limpar_campos;
+    private javax.swing.JButton botaao_sair;
+    private javax.swing.JButton botao_cadastrar_usuario;
+    private javax.swing.JTextField cpf_usuario;
+    private javax.swing.JTextField email_usuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,10 +259,8 @@ jTextField4.setText("");
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField nome_usuario;
+    private javax.swing.JPasswordField senha_usuario;
+    private javax.swing.JTextField telefone_usuario;
     // End of variables declaration//GEN-END:variables
 }
