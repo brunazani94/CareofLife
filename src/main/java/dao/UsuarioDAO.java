@@ -4,7 +4,7 @@ import modelo.Usuario;
 import java.sql.*;
 import java.sql.PreparedStatement;
 public class UsuarioDAO { 
-    private Connection connection;
+    private final Connection connection;
     Long id;
     String nome;
     String cpf;
@@ -16,7 +16,8 @@ public class UsuarioDAO {
     public void adiciona(Usuario usuario){ 
         String sql = "INSERT INTO usuario(nome,cpf,email,telefone) VALUES(?,?,?,?)";
         try { 
-            PreparedStatement stmt = connection.prepareStatement(sql);
+            PreparedStatement stmt;
+            stmt = connection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getCpf());
             stmt.setString(3, usuario.getEmail());
